@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rcsb_ligand_retrieval"
+version = "0.1.0"
+description = "Pipeline for constructing a retrieval index of protein-ligand complexes from the RCSB Protein Data Bank with ESM-2 pocket embeddings, RDKit Morgan ligand fingerprints, and a FAISS HNSW index."
+readme = "README.md"
+license = {file = "LICENSE"}
+requires-python = ">=3.10"
+authors = [{name = "Hemanth Kari", email = "karihemanth19@gmail.com"}]
+keywords = ["protein-ligand", "retrieval", "RCSB", "PDB", "ESM-2", "RDKit", "FAISS", "drug-discovery"]
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+    "Topic :: Scientific/Engineering :: Chemistry",
+]
+dependencies = [
+    "numpy>=1.26",
+    "torch>=2.0",
+    "fair-esm>=2.0.0",
+    "rdkit>=2024.03",
+    "gemmi>=0.6",
+    "h5py>=3.10",
+    "faiss-cpu>=1.8",
+    "huggingface_hub>=0.20",
+]
+
+[project.urls]
+Dataset = "https://huggingface.co/datasets/HemanthKari/rcsb-ligand-retrieval-v0.1"
+DOI = "https://doi.org/10.57967/hf/8408"
+
+[tool.setuptools.packages.find]
+include = ["rcsb_ligand_retrieval*"]
